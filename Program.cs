@@ -119,7 +119,7 @@ namespace St10443034Part1
             var chatbot = new CyberSecurityChatbot();
 
             // Display help message
-            
+            DisplayHelp();
 
             while (true)
             {
@@ -145,7 +145,8 @@ namespace St10443034Part1
 
                 if (input.Equals("help", StringComparison.OrdinalIgnoreCase))
                 {
-                
+                    DisplayHelp();
+                    continue;
                 }
 
                 // Get response with typing effect
@@ -164,7 +165,20 @@ namespace St10443034Part1
             }
         }
 
-        
+        private static void DisplayHelp()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nI can help with these cybersecurity topics:");
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("- Password safety");
+            Console.WriteLine("- Phishing scams");
+            Console.WriteLine("- Safe browsing");
+            Console.WriteLine("- Social media security");
+            Console.WriteLine("- Banking fraud protection");
+            Console.WriteLine("- SIM swap fraud prevention");
+            Console.WriteLine("\nType 'help' to see this again or 'exit' to quit");
+            Console.ResetColor();
+        }
 
         private static void TypeWriterEffect(string text)
         {
